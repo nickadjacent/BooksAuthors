@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Info</title>
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'authorName.css' %} ">
+</head>
+
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown_content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+</script>
+
+<body>
+
+    <h1>Author Title</h1>
+    <h3>Author ID</h3>
+    <div>
+        Description <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <h3>Books</h3>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.id }} {{ book.title }} </li>
+        {% endfor %}
+    </ul>
+    <form action="" method="POST">
+        <button type="submit" class="drpbtn">Select a Book</button>
+        {% for book in books %}
+        <div class="dropdown_content">
+            <a> {{ book.id }} {{ book.title }} </a>
+            {% endfor %}
+        </div>
+
+    </form>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

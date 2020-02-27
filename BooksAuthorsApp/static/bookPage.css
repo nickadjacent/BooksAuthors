@@ -1,0 +1,12 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+.inline_block{
+    display: inline-block;
+    margin-left: 50px;
+
+}
